@@ -1,6 +1,7 @@
 ---
-title: "R Exercises Session 8"
-author: "Introduction to R for Data Management and Analysis"
+title: "R Exercise Session 8"
+author: "Elizabeth Furth"
+date: "6/28/2021"
 output: word_document
 ---
 
@@ -23,21 +24,65 @@ Check your work by knitting the document.
 
 1. Create a level 2 header below in Markdown with the name "Answer 1".
 
+## Answer 1
 
 2. Add an unordered Markdown list of your favorite food dishes and
 add their ingredients as sub-items in the list. You should enter at least two
 dishes with two ingredients each.
 
-
+* Guacamole
+  * Avocado
+  * Tomato
+  * Lemon juice
+  * Salt
+  * Pepper
+* Ice Cream
+  * Sugar
+  * Salt
+  * Cream
+  * Ice
+  * Chocolate
+ 
 3. Insert an R code chunk below. Show the `summary` of the `Orange` dataset.
 Run a linear regression using the `lm` function to predict `circumference` from
 `age` and assign the result. Show the `summary` of the fit object that you
 assigned.
+```{r}
+summary(Orange)
+fit <- lm(circumference ~ age, data = Orange)
+summary (fit)
 
+```
+ Tree       age         circumference  
+ 3:7   Min.   : 118.0   Min.   : 30.0  
+ 1:7   1st Qu.: 484.0   1st Qu.: 65.5  
+ 5:7   Median :1004.0   Median :115.0  
+ 2:7   Mean   : 922.1   Mean   :115.9  
+ 4:7   3rd Qu.:1372.0   3rd Qu.:161.5  
+       Max.   :1582.0   Max.   :214.0  
+
+Call:
+lm(formula = circumference ~ age, data = Orange)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-46.310 -14.946  -0.076  19.697  45.111 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 17.399650   8.622660   2.018   0.0518 .  
+age          0.106770   0.008277  12.900 1.93e-14 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 23.74 on 33 degrees of freedom
+Multiple R-squared:  0.8345,	Adjusted R-squared:  0.8295 
+F-statistic: 166.4 on 1 and 33 DF,  p-value: 1.931e-14
 
 4. Add an RMarkdown weblink (in link format) below to your favorite R reference
 website.
 
+[Tutorials Point](https://www.tutorialspoint.com/r/index.htm)
 
 5. Replace the author field in the `yaml` header with your name and then
 successfully `knit` the RMarkdown document into a Word document.
